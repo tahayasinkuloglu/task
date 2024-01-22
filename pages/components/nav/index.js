@@ -41,7 +41,7 @@ const toggleBodyClass = () => {
 const NavBar = () => {
   const [navOpen, setNavOpen] = useState(false);
   let btnClass =
-    "text-white flex gap-1 px-2 py-3 rounded-md items-center justify-center w-1/2";
+    "text-white flex gap-1 px-2 py-3 rounded-md items-center justify-center w-1/2 max-[390px]:w-full";
   let navWidth = navOpen == true ? "left-0" : "-left-full";
   let navZ = navOpen == true ? "block" : "hidden";
 
@@ -85,13 +85,13 @@ const NavBar = () => {
             );
           })}
         </ul>
-        <div className="flex gap-4 justify-center p-5">
+        <div className="flex gap-3 justify-center py-5 px-2 max-[390px]:flex-col max-[390px]:items-center">
           <button className={`bg-[#F27A1A] ${btnClass}`}>
-            <img src="account_circle.svg" />
+            <img src="account_circle.svg" className="w-6 h-6" />
             <span className="text-xs">GİRİŞ YAP / ÜYE OL</span>
           </button>
           <button className={`bg-[#26A548] ${btnClass}`}>
-            <img src="local_shipping.svg" />
+            <img src="local_shipping.svg" className="w-6 h-6" />
             <span className="text-xs">SİPARİŞLERİM</span>
           </button>
         </div>
