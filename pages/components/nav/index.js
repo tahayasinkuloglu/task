@@ -58,7 +58,7 @@ const NavBar = () => {
   return (
     <div className="flex items-center px-1 py-3 justify-between bg-[#F9F9F9] border-[1px] border-[#EBEBEB]">
       <div
-        className={`absolute z-20 ${navWidth} top-0 h-full bg-[#F7F7F7] w-[85%] transition-all duration-200 ease-linear`}
+        className={`absolute z-20 ${navWidth} top-0 h-full bg-[#F7F7F7] w-[85%] transition-all duration-200 ease-linear overflow-y-auto`}
       >
         <div className="flex items-center justify-between px-2 py-5 bg-[#e1e1e183]">
           <img src="giyiyor.svg" className="w-50" />
