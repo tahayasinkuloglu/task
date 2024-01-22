@@ -33,6 +33,11 @@ const data = [
   },
 ];
 
+const toggleBodyClass = () => {
+  let customBody = document.body;
+  customBody.classList.toggle("customHidden");
+};
+
 const NavBar = () => {
   const [navOpen, setNavOpen] = useState(false);
   let btnClass =
@@ -40,17 +45,27 @@ const NavBar = () => {
   let navWidth = navOpen == true ? "left-0" : "-left-full";
   let navZ = navOpen == true ? "block" : "hidden";
 
+  const handleOpen = () => {
+    setNavOpen(!navOpen);
+    toggleBodyClass();
+  };
+
+  const handleClose = () => {
+    setNavOpen(!navOpen);
+    toggleBodyClass();
+  };
+
   return (
     <div className="flex items-center px-1 py-3 justify-between bg-[#F9F9F9] border-[1px] border-[#EBEBEB]">
       <div
-        className={`absolute z-20 ${navWidth} top-0 h-full bg-[#F7F7F7] w-[85%] transition-all duration-200 ease-linear `}
+        className={`absolute z-20 ${navWidth} top-0 h-full bg-[#F7F7F7] w-[85%] transition-all duration-200 ease-linear`}
       >
         <div className="flex items-center justify-between px-2 py-5 bg-[#e1e1e183]">
           <img src="giyiyor.svg" className="w-50" />
           <div
             className="flex flex-col items-center"
             onClick={() => {
-              setNavOpen(!navOpen);
+              handleClose();
             }}
           >
             <MdClose className="text-2xl" />
@@ -88,7 +103,7 @@ const NavBar = () => {
       <div className="flex items-center gap-5 relative">
         <div
           onClick={() => {
-            setNavOpen(!navOpen);
+            handleOpen();
           }}
         >
           <RiMenu2Fill className="text-3xl" />

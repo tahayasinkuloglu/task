@@ -18,3 +18,7 @@
   width: 54px !important;
   height: 7px !important;
 }
+
+.customHidden {
+  overflow: hidden;
+}
